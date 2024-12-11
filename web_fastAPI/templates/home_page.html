@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} Главная страница {% endblock %}</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+        <style>
+        body {
+    background-image:
+        {% if request.path == '/portfolio/improvement' %}
+            url('/static/img/background_improvement.jpg')
+        {% elif request.path == '/portfolio/commercial_interiors' %}
+            url('/static/img/background_commercial_interiors.jpg')
+        {% elif request.path == '/portfolio/residential_interiors' %}
+            url('/static/img/background_residential_interiors.jpg')
+        {% else %}
+            url('/static/img/home_page.jpg')
+        {% endif %};
+            background-size: cover; / Изменяет размер изображения, чтобы покрыть весь экран /
+            background-repeat: no-repeat; / Изображение не повторяется /
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0; / Цвет фона страницы /
+        }
+        </style>
+</head>
+<body>
+    {% block menu %}
+    <nav>
+        <div class="logo">
+            <a href='/' class="logo"><img src="/static/img/logo.png" alt="Логотип " /></a>
+        </div>
+        <div class="menu">
+            <a href="/portfolio">портфолио</a>
+            <a href="/services">услуги</a>
+            <a href="/contacts">контакты</a>
+        </div>
+    </nav>
+
+    {% endblock %}
+
+    {% block portfolio_navigation %} {% endblock %}
+
+    {% block architecture %} {% endblock %}
+
+    {% block improvement %} {% endblock %}
+
+    {% block commercial_interiors %} {% endblock %}
+
+    {% block residential_interiors %} {% endblock %}
+
+</body>
+</html>

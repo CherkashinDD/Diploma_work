@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Услуги{% endblock %}</title>
+    <link rel="stylesheet" href="/static/css/style2.css">
+</head>
+<body>
+
+    {% block menu %}
+    <nav>
+        <div class="logo">
+            <a href='/' class="logo"><img src="/static/img/logo_white.png" alt="Логотип " /></a>
+        </div>
+        <div class="menu">
+            <a href="/portfolio">портфолио</a>
+            <a href="/services">услуги</a>
+            <a href="/contacts">контакты</a>
+        </div>
+    </nav>
+    {% endblock %}
+
+    {% block content %}
+    <div class="contact-info">
+        <div class="column">
+            <div>ЗАКАЗАТЬ ПРОЕКТ</div>
+            <br>
+            <div>+7 914 761 4759</div>
+            <div>cherepaha-project@yandex.ru</div>
+        </div>
+        <div class="column">
+            <div>АДРЕС</div>
+            <br>
+            <div>г. Южно-Сахалинск</div>
+            <div>Россия</div>
+        </div>
+        <div class="column">
+            <div>ВРЕМЯ РАБОТЫ</div>
+            <br>
+            <div>пн-пт 10:00 - 19:00</div>
+        </div>
+    </div>
+    {% endblock %}
+
+    {% block bottom_title %}
+    <div class="title">
+        <p >КОНТАКТЫ</p>
+    </div>
+    {% endblock %}
+
+</body>
+</html>

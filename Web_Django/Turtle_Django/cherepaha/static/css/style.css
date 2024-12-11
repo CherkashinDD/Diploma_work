@@ -1,0 +1,144 @@
+nav .logo {
+            margin-left: 20px;  /*Отступ справа для логотипа*/
+}
+
+nav .menu {
+            margin-right: 40px; /*Отступ слева для меню*/
+}
+
+
+nav {
+            display: flex; /* Используем Flexbox */
+            justify-content: space-between; /* Размещаем элементы по краям */
+            align-items: center; /* Выравниваем по центру */
+            padding: 10px; /* Отступы */
+            background-color: rgba(248, 248, 248, 0.3); /* Полупрозрачный цвет фона */
+            backdrop-filter: blur(3px); /* Эффект размытия фона */
+            width: 100%; /* Занять полную ширину родителя */
+            height: 120px; /* Задайте нужную высоту для навигации */
+            position: fixed; /* Закрепляем навигацию в верхней части экрана */
+            top: 0; /* Определяем верхнее положение */
+            left: 10; /* Определяем левое положение */
+            right: 0; /* Определяем правое положение */
+            z-index: 1000; /* Обеспечиваем, чтобы навигация была выше других элементов */
+        }
+        }
+.logo {
+            display: flex; /* Для логотипов */
+            gap: 10px; /* Пробел между логотипами */
+        }
+.menu {
+            display: flex; /* Для навигационного меню */
+            gap: 40px; /* Пробел между пунктами меню */
+        }
+.menu a {
+            text-decoration: none; /* Убираем подчеркивание */
+            position: relative; /* Устанавливаем позицию для псевдоэлемента */
+            color: #333; /* Цвет текста ссылок */
+            font-size: 30px; / Увеличиваем размер шрифта /
+        }
+.menu a::after {
+            content: ''; /* Создаем пустой контент для псевдоэлемента */
+            position: absolute; /* Абсолютное позиционирование */
+            left: 0; /* Сначала находимся слева */
+            bottom: 0; /* Ставим на уровень текста */
+            width: 100%; /* Полная ширина ссылки */
+            height: 2px; /* Высота подчеркивания */
+            background-color: #333; /* Цвет подчеркивания */
+            transform: scaleX(0); /* Начальное состояние - подчеркивание скрыто */
+            transition: transform 0.9s ease; /* Плавный переход */
+        }
+
+.menu a:hover::after {
+            transform: scaleX(1); /* Находимся в состоянии наведения - подчеркивание появляется */
+        }
+
+.bottom-navigation {
+    position: fixed; /* Фиксируем меню внизу экрана */
+    bottom: 0; /* Меню находится внизу экрана */
+    left: 0; /* Слева */
+    width: 100%; /* Занимаем всю ширину */
+    text-align: left; /* Выровнять текст по левому краю */
+    padding: 20px; /* Отступы вокруг блока */
+    background-color: transparent; /* Прозрачный фон */
+
+}
+
+.title {
+    font-family:  'Artifakt Element', sans-serif;
+    font-size: 100px;
+    color: #f0f0f0;
+    margin-bottom: 10px;
+}
+
+.text {
+    font-family:  'Arial narrowt', sans-serif;
+    font-size: 20px;
+    color: #f0f0f0;
+    margin-bottom: 10px;
+}
+
+.bottom-menu {
+    font-family: 'Arial narrow', sans-serif;
+    display: flex; /* Используем Flexbox для горизонтального расположения ссылок */
+    gap: 70px; /* Пробел между пунктами меню */
+}
+
+.bottom-menu a {
+    text-decoration: none; /* Убираем подчеркивание */
+    text-transform: uppercase; /* Все буквы заглавные */
+    color: #f0f0f0; /* Цвет текста ссылок */
+    position: relative; /* Устанавливаем позицию для псевдоэлемента */
+    font-size: 30px; /* Размер шрифта */
+}
+
+.bottom-menu a::after {
+    content: ''; /* Создаем пустой контент для псевдоэлемента */
+    position: absolute; /* Абсолютное позиционирование */
+    left: 0; /* Сначала находимся слева */
+    bottom: 0; /* Ставим на уровень текста */
+    width: 100%; /* Полная ширина ссылки */
+    height: 2px; /* Высота подчеркивания */
+    background-color: #f0f0f0; /* Цвет подчеркивания */
+    transform: scaleX(0); /* Начальное состояние - подчеркивание скрыто */
+    transition: transform 1s ease; /* Плавный переход */
+}
+
+.bottom-menu a:hover::after {
+    transform: scaleX(1); /* Находимся в состоянии наведения - подчеркивание появляется */
+}
+
+.architecture-container {
+    padding: 175px;
+    text-align: center; /* Центрирование текста */
+    font-family: Arial, sans-serif; /* Выбор шрифта */
+}
+
+.image-grid {
+    display: flex;
+    flex-wrap: wrap; /* Позволяет изображениям переноситься на новую строку */
+    justify-content: center; /* Центруем изображения */
+}
+
+.image-grid a {
+    margin: 10px; /* Отступы между изображениями */
+    color: black; /* Цвет текста подписи */
+    text-decoration: none; /* Убираем подчеркивание у ссылок */
+    display: block; /* Делаем ссылку блочным элементом */
+    text-align: center; /* Центруем текст по ширине изображения */
+    width: 400px; /* Ширина ссылки должна соответствовать ширине изображения */
+}
+
+.image-grid img {
+    width: 400px; /* Ширина изображений */
+    height: auto; /* Высота будет пропорциональной */
+    border-radius: 8px; /* Закругленные углы для изображений */
+}
+
+.image-grid p {
+    margin-top: 5px; /* Отступ сверху для подписей */
+    max-width: 100%; /* Максимальная ширина подписи равна ширине ссылки */
+    overflow-wrap: break-word; /* Перенос длинных слов на новую строку */
+    word-wrap: break-word; /* Альтернативное свойство для совместимости */
+    text-align: center; /* Центрируем текст по ширине подписи */
+}

@@ -1,0 +1,89 @@
+body {
+            background-color: #393939; /* Цвет фона страницы */
+            font-family: Arial, sans-serif; /* Выбор шрифта */
+        }
+nav .logo {
+            margin-left: 35px;  /*Отступ справа для логотипа*/
+}
+
+nav .menu {
+            margin-right: 40px; /*Отступ слева для меню*/
+}
+
+nav {
+            display: flex; /* Используем Flexbox */
+            justify-content: space-between; /* Размещаем элементы по краям */
+            align-items: center; /* Выравниваем по центру */
+            padding: 10px; /* Отступы */
+            background-color: #2a2a2a;
+            width: 100%; /* Занять полную ширину родителя */
+            height: 120px; /* Задайте нужную высоту для навигации */
+            position: fixed; /* Закрепляем навигацию в верхней части экрана */
+            top: 0; /* Определяем верхнее положение */
+            left: 10; /* Определяем левое положение */
+            right: 0; /* Определяем правое положение */
+            z-index: 1000; /* Обеспечиваем, чтобы навигация была выше других элементов */
+        }
+
+.menu {
+            display: flex; /* Для навигационного меню */
+            gap: 40px; /* Пробел между пунктами меню */
+        }
+.menu a {
+            text-decoration: none; /* Убираем подчеркивание */
+            position: relative; /* Устанавливаем позицию для псевдоэлемента */
+            color: #f0f0f0;; /* Цвет текста ссылок */
+            font-size: 30px; / Увеличиваем размер шрифта /
+        }
+.menu a::after {
+            content: ''; /* Создаем пустой контент для псевдоэлемента */
+            position: absolute; /* Абсолютное позиционирование */
+            left: 0; /* Сначала находимся слева */
+            bottom: 0; /* Ставим на уровень текста */
+            width: 100%; /* Полная ширина ссылки */
+            height: 2px; /* Высота подчеркивания */
+            background-color: #f0f0f0;; /* Цвет подчеркивания */
+            transform: scaleX(0); /* Начальное состояние - подчеркивание скрыто */
+            transition: transform 0.9s ease; /* Плавный переход */
+        }
+
+.menu a:hover::after {
+            transform: scaleX(1); /* Находимся в состоянии наведения - подчеркивание появляется */
+        }
+
+.title {
+    position: fixed;
+    bottom: 0; /* Внизу экрана */
+    left: 0; /* Слева */
+    text-align: left; /* Выровнять текст по левому краю */
+    background-color: transparent; /* Прозрачный фон */
+    font-family:  'Artifakt Element', sans-serif; /* Выбор шрифта */
+    font-size: 100px;
+    color: #f0f0f0;
+    margin-bottom: 10px;
+    padding-left: 60px;
+}
+
+.title::after {
+    content: attr(data-text); /*Используем атрибут data-text для отражения текста*/
+    display: block; /*Переносим на новую строку*/
+    color: rgba(240, 240, 240, 0.5); /*Цвет отражения*/
+    transform: scaleY(-1); /*Зеркальное отражение по вертикали*/
+    margin-top: -5px; /*Небольшой отступ для сближения с основным текстом*/
+}
+
+.contact-info {
+    display: flex; /* Используем Flexbox для колонок */
+    justify-content: space-around; /* Равномерное распределение колонок */
+    align-items: center; /* Вертикальное выравнивание по центру */
+    height: 90vh; /* Высота контейнера для центровки */
+    padding-left: 60px; /* Смещаем колонки вправо относительно левого края */
+}
+
+.column {
+    flex: 1; /* Каждая колонка занимает одинаковую долю ширины */
+    text-align: left; /* Выровнять текст по левому краю */
+    color: #f0f0f0; /* Цвет текста */
+    font-size: 24px; /* Размер шрифта для текста колонок */
+    font-family: 'Arial Narrow', sans-serif; /* Шрифт для текста */
+}
