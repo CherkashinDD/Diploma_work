@@ -1,0 +1,39 @@
+{% extends "contacts.html" %}
+
+{% block title %} Регистрация {% endblock %}
+
+
+
+{% block content %}
+   <div class="contact-info">
+        <div class="column">
+             <form method="post">
+                <label for="last_name">Введите фамилию:</label>
+                <input type="text" id="last_name" name="last_name" required><br><br>
+                <label for="first_name">Введите имя:</label>
+                <input type="text" id="first_name" name="first_name" required><br><br>
+                <label for="patronymic">Введите отчество:</label>
+                <input type="text" id="patronymic" name="patronymic" required><br><br>
+                <label for="phone_number">Введите номер телефона:</label>
+                <input type="text" id="phone_number" name="phone_number"><br><br>
+                <label for="email">Введите адрес электронной почты:</label>
+                <input type="email" id="email" name="email" required><br><br>
+                <label for="password">Введите пароль:</label>
+                <input type="password" id="password" name="password" required><br><br>
+                <label for="password">Повторно введите пароль:</label>
+                <input type="password" id="confirm_password" name="confirm_password" required><br><br>
+                <input type="submit" value="Зарегистрироваться">
+             </form>
+        </div>
+       <div class="column">
+           {% if error %}
+                <p>{{ message }}</p>
+                <p>{{ error }}</p>
+           {% endif %}
+       </div>
+   </div>
+{% endblock %}
+
+
+{% block bottom_title %} {% endblock %}
+
