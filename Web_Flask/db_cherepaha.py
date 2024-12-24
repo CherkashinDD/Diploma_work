@@ -1,12 +1,13 @@
 from flask_sqlalchemy import SQLAlchemy
-from phonenumbers import parse, is_valid_number
-
-
 
 db = SQLAlchemy()
 
 
 class User(db.Model):
+    """Данный класс является моделью базы данныхcherepaha.db., которая создаёт таблицу users.
+       Наследуется от db.Model, что позволяет использовать функциональность, предоставляемую SQLAlchemy,
+       для работы с базами данных"""
+
     __tablename__ = 'users'
 
     id = db.Column(db.Integer, primary_key=True)
@@ -17,23 +18,19 @@ class User(db.Model):
     email = db.Column(db.String(254), nullable=False, info={'label': 'Email'})
 
     def __repr__(self):
-        return f"{self.last_name} {self.first_name} {self.patronymic}"
+        """Данный метод определяет строковое представление объекта User,
+           для удобства вывода информации о пользователе"""
 
-    def validate_phone_number(self):
-        if not hasattr(self, 'phone_number'):
-            raise AttributeError('Введите номер телефона')
-        try:
-            phone_number = parse(self.phone_number, None)
-            if not is_valid_number(phone_number):
-                raise ValueError('Недопустимый номер телефона')
-        except Exception as e:
-            raise ValueError(f'Недопустимый номер телефона: {str(e)}')
+        return f"{self.last_name} {self.first_name} {self.patronymic}"
 
 
 def init_db(app):
+    """Данная функция принимает в качестве аргумента объект приложения Flask, что позволяет  SQLAlchemy использовать
+       настройки и контекст приложения для работы с базой данных. Создаёт контекст приложения,
+       который позволит получить доступ к текущему приложению и его конфигурации,
+       что необходимо для работы с базой данных. Создаёт таблицу в базе данных (если она ещё не существует),
+        определённую моделью User. Функция служит для настройки и нициализации базы данных при запуске приложения."""
+
     db.init_app(app)
     with app.app_context():
         db.create_all()
-
-
-

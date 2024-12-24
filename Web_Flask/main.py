@@ -4,7 +4,7 @@ from routers.portfolio_menu import portfolio_menu_routes
 from routers.registration import user_registration_routes
 from flask_wtf.csrf import CSRFProtect
 from config import SECRET_KEY
-from db_cherepaha import db, init_db, User
+from db_cherepaha import init_db
 
 
 app = Flask(__name__)
